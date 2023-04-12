@@ -1,0 +1,202 @@
+header {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(18, 18, 120);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 1;
+    min-width: 340px;
+}
+
+.AgencyNameDiv {
+    width: 20%;
+    color: white;
+    display: flex;
+    justify-content: right;
+    margin-right: 70px;
+}
+
+.Emblem {
+    width: 100px;
+    height: 100%;
+}
+
+.DivForRegIcon{
+    height: 29px;
+    width: 29px;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    background-color: #eff4f8;
+    border-radius: 50%;
+    margin-left: 90px;
+}
+
+.regIcon{
+    width: 29px;
+    height: 29px;
+}
+
+[data-tooltip] {
+    position: relative; 
+   }
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute; 
+    width: auto;
+    left: 0; top: 0;
+    background: #3989c9;
+    color: #fff; 
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: 1s;
+} 
+
+[data-tooltip]:hover::after {
+    opacity: 1; 
+    top: 1.8em;
+    z-index: 1
+}
+
+.DivForBtnRequest {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    align-self: center;
+}
+
+.BtnRequest {
+    width: auto;
+    height: 60%;
+    color: white;
+    background-color: #f76c29;
+    border: none;
+    border-radius: 3px;
+}
+
+.BtnRequest:hover {
+    background-color: rgba(254, 95, 50, 0.932);
+} 
+
+.PopupField{
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    transform: translate(0, 0);
+    transition: all linear 0.3s;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px #4f92d0;
+    background-color: rgba(90, 90, 154, 0.501);
+    /* background-color: -moz-radial-gradient(center, ellipse cover, #6195ed, #ffcfcf);
+    background-color: -webkit-linear-gradient(top, #6195ed, #ffcfcf);
+    background-color: -o-linear-gradient(top, #6195ed, #ffcfcf);
+    background-color: -ms-linear-gradient(top, #6195ed, #ffcfcf); */
+}
+
+.RegField{
+    transform: translate(100%, 0);
+    position: absolute;
+    top: 42px;
+    right: 0;
+}
+
+/* .PopupField{
+    width: 300px;
+    height: 150px;
+    background-color: cornflowerblue;
+    position: absolute;
+    top: 42px;
+    right: 0;  
+    transform: translate(100%, 0);
+    transition: all linear 0.3s;
+}
+
+.RegField{
+    transform: translate(0, 0);
+} */
+
+.Label{
+    color: powderblue;
+    /* font-size: 20px; */
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.formInput{
+    width: 100%;
+}
+
+.submitInput{
+    width: 100%;
+    background-color: #f76c29;
+    border-radius: 3px;
+    border: 1px solid #f76c29;
+    color: white;
+}
+
+.submitInput:hover {
+    background-color: rgba(254, 95, 50, 0.932);
+} 
+
+.DivForLogined{
+    height: 29px;
+    width: 29px;
+    border-radius: 50%;
+    margin-left: 90px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+  
+}
+
+.avaLogined,
+.avaLogined2,
+.avaLogined3{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.error{
+    color: red;
+    font-size: 17px;
+    position: absolute;
+    left: 175px;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+
+
+
+
+@media (max-width: 640px){
+    .DivForBtnRequest{
+        display: none;
+    }
+
+    .AgencyNameDiv{
+        width: auto;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 540px){
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .AgencyNameDiv{
+        display: none;
+    }
+}
+

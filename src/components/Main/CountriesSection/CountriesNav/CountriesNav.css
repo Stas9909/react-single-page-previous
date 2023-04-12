@@ -1,0 +1,93 @@
+.CountriesNav{
+    width: 20%;
+    display: flex;
+}
+
+.CountriesNavWrap{
+    width: 100%;
+    margin-top: 75px;
+}
+
+.InputForHotelSearching{
+    width: 75%;
+    border-radius: 3px 0 0 3px;
+}
+
+.btnForHotelSearch{
+    position: absolute;
+    border-left: none;
+}
+
+.DivForHotelSerching{
+    /* display: flex; */
+}
+
+.DivForCountriesList{
+    width: 90%;
+    height: auto;
+}
+
+.showSelectedList{
+    height: auto;
+    display: block;
+}
+
+.hideSelectedList{
+    height: auto;
+    display: none;
+}
+
+.ParForCategoryTxt,
+.ParForCountryTxt{
+    color: gray;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.ParForCategoryTxtSelected,
+.ParForCountryTxtSelected{
+    color: #f76c29;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.ParForCategoryTxt:hover,
+.ParForCountryTxt:hover{
+    color: #f76c29;
+}
+
+.chooseMe{
+    margin-right: 5px;
+}
+
+.LinkForCategory,
+.LinkForCountry{
+    text-decoration: none;
+    color: gray;
+}
+
+.DivForCategoriesList{
+    width: 90%;
+    height: auto;
+    border-top: 1px solid lightgray;
+}
+
+@media (max-width: 1150px){
+    .CountriesNav{
+        width: 214px;
+    }
+}
+
+@media (max-width: 500px){
+    .InputForHotelSearching{
+        width: 65%;
+    }
+    /* .btnForHotelSearch{
+        position: relative;
+        border-left: none;
+        width: 100%;
+        border-top: none;
+    } */
+}
