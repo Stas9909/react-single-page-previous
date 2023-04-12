@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const ToursTemplateSection = (props) => {
 
     return (
-        <NavLink to={`/react-single-page/${props.route}`} className="ref2">
+        <NavLink to={`/react-single-page-previous/${props.route}`} className="ref2">
             <div className="PopDestination" key={props.id}>
                 <div className="DivForLogo">
                     <img className="logo" src={require(`../../../Assets/${props.pict}`)} alt='' />

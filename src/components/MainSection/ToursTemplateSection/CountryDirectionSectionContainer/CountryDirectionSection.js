@@ -3,21 +3,15 @@ import "./CountryDirectionSection.css";
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import setCountriesActionCreator from "../../../../Redux/countries/MainSectionActionCreator";
-import ReactDOM from 'react-dom';
 import { setModalActionCreator } from "../../../../Redux/modal/modalAction";
 
 const CountryDirectionSection = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);//закрываем модлку(открыта или закрыта)
-
-    const [currentImageUrlIndex, setCurrentImageUrlIndex] = useState(0);//индекс текущей картинки
-    const [imageUrlsArr, setImageUrlsArr] = useState([]);//массив ссылок на все картинки
-
     const [currentImageUrl, setCurrentImageUrl] = useState('');//здесь храним ссылку на картинку
 
     const dispatch = useDispatch();
 
     const handleModalClose = () => {
-        // setIsModalVisible(false)//закрываем модалку
         dispatch(setModalActionCreator({
             name: '',
             children: null
@@ -25,9 +19,7 @@ const CountryDirectionSection = () => {
     }
 
     const handleImageClick = (imageUrl, imageUrlsArr) => {
-        console.log(imageUrl)
         setCurrentImageUrl(imageUrl);//передаем ссылку на картинку и вешаем ее на кажд img на onClick
-        // setIsModalVisible(true);//открываем модалку
         dispatch(setModalActionCreator({
             name: 'openImageModal',
             children: <div className="modalForImage">
@@ -47,16 +39,6 @@ const CountryDirectionSection = () => {
 
     let CarouselElem = React.createRef();
 
-    // useEffect(() => {
-    //     const setAutoSlide = setInterval(() => {
-    //         setSlide(() => {
-    //             CarouselElem.current.style.right = `${slide*20}%`;
-    //             return slide >=2 ? slide = 0 : slide++;
-    //         })
-    //     }, 3000);
-    //     return () => clearInterval(setAutoSlide)
-    // }, [slide])
-
     useEffect(() => {
         if (!isModalVisible && CarouselElem.current?.children.length > 0) {
             // if (!isModalVisible && CarouselElem.current && CarouselElem.current.children.length > 0) {
@@ -69,11 +51,10 @@ const CountryDirectionSection = () => {
             }, 3000);
             return () => clearInterval(setAutoSlide);
         }
-    }, [CarouselElem]);//в массив зависимостей добавил CarouselElem, чтобы useEffect срабатывал только после того, как элемент будет отрендерен. В массив зависимоствей передается CarouselElem и не передается slide, потому что slide меняется внутри useEffect, а CarouselElem меняется внутри useEffect, но не внутри функции, которая передается в useEffect
+    }, [CarouselElem]);
 
     const { direction } = useParams();
     const tour = toursTemplate.find(item => item.route === direction);
-    console.log(tour)
     if (!tour) return null;
 
     return (
@@ -96,14 +77,6 @@ const CountryDirectionSection = () => {
                     onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage6}`))} />}
                 {tour.CarouselImage7 && <img className="CarouselPicters" src={require(`../../../../Assets/${tour.CarouselImage7}`)} alt=""
                     onClick={() => handleImageClick(require(`../../../../Assets/${tour.CarouselImage7}`))} />}
-                {/* {isModalVisible &&
-                    (ReactDOM.createPortal(
-                        <div className="modalForImage">
-                            <img className="currentImageInPortal" src={currentImageUrl} alt="" />
-                            <button onClick={handleModalClose} className="closePortalButton">X</button>
-                        </div>,
-                        document.body
-                    ))} */}
             </div>
             <div className="GeneralDivForText">
                 <div className="wrapForH4">

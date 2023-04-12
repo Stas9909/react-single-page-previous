@@ -3,7 +3,7 @@ import axios from "axios";
 export const setHotelsActionCreator = (countryName) => (dispatch, getState) => {
   dispatch({ type: "SET_IS_LOADING", payload: true })//показать preloader
 
-  axios.get("../../react-single-page/data.json")
+  axios.get("../../react-single-page-previous/data.json")
     .then(response => {
       //запис в переменную обращение к св-ву объекта (turkey/egypt)
       const currentCountryHotels = response.data[countryName];

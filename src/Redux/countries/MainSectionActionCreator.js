@@ -3,7 +3,7 @@ import axios from "axios";
 const setCountriesActionCreator = () => (dispatch, getState) => {
     dispatch({ type: "SET_IS_LOADING", payload: true })//показать preloader
 
-    axios.get("../../react-single-page/directions.json")
+    axios.get("../../react-single-page-previous/directions.json")
         .then(response => {
             // setTimeout(() => {
                 dispatch({ type: "SET_COUNTRIES", toursTemplate: response.data })

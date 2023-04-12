@@ -25,10 +25,9 @@ function App() {
         <div className=''>{modal.name === "openImageModal" && modal.children}</div>
         <Preloader />
       </Portal>
-      {/* <Preloader /> */}
       <Header />
       <Routes>
-        <Route path="/react-single-page/" element={
+        <Route path="/react-single-page-previous/" element={
           <>
             <Main />
             <MainSection />
@@ -42,7 +41,7 @@ function App() {
             <FeedbackSectionContainer />
           </>
         } />
-        <Route path="/react-single-page/:direction" element=
+        <Route path="/react-single-page-previous/:direction" element=
           {<CountryDirectionSection />} />
         <Route exact path="countries/" element={<CountriesSection />}>
           <Route path="turkey/" element={<TurkeyHotelsSection />} />
